@@ -3,6 +3,8 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -31,3 +33,5 @@ Route::delete('/product/{id}', [ProductController::class, 'destroy']);
 Route::resource('category', CategoryController::class);
 Route::resource('order', OrderController::class);
 Route::resource('order_item', OrderItemController::class);
+Route::resource('user', UserController::class);
+Route::resource('shop', ShopController::class);

@@ -31,8 +31,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $product = new Category;
-        $product-> name = $request->name;
-        $product-> total_product = $request->total_product;
+        $product->name = $request->name;
+        $product->total_product = $request->total_product;
         $product->save();
 
         return response()->json([
@@ -48,8 +48,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         if (!empty($category)) {
             return response()->json($category);
-        }
-        else {
+        } else {
             return response()->json([
                 "message" => "Category not found."
             ], 404);
@@ -113,8 +112,7 @@ class CategoryController extends Controller
             return response()->json([
                 "message" => "Category deleted."
             ], 202);
-        }
-        else {
+        } else {
             return response()->json([
                 "message" => "Category not found."
             ], 404);

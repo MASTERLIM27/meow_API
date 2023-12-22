@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string('image_path');
             $table->integer('price');
             $table->integer('stock');
-            $table->string('type');
+            $table->unsignedBigInteger('type');
+
+            $table->foreign('type')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
